@@ -1,0 +1,35 @@
+What I prompted:
+
+ChatGpt why do i get the following error?
+/SceneTwo.java:36: error: no suitable method found for drawText(java.lang.String) drawText(bestsong[row][col]); ^ method org.code.theater.Scene.drawText(java.lang.String,int,int) is not applicable (actual and formal argument lists differ in length) method org.code.theater.Scene.drawText(java.lang.String,int,int,double) is not applicable (actual and formal argument lists differ in length) /SceneTwo.java:39: error: no suitable method found for drawText(java.lang.String) drawText(bestsong[row][col]); ^ method org.code.theater.Scene.drawText(java.lang.String,int,int) is not applicable (actual and formal argument lists differ in length) method org.code.theater.Scene.drawText(java.lang.String,int,int,double) is not applicable (actual and formal argument lists differ in length) /SceneTwo.java:42: error: no suitable method found for drawText(java.lang.String) drawText(bestsong[row][col]); ^ method org.code.theater.Scene.drawText(java.lang.String,int,int) is not applicable (actual and formal argument lists differ in length) method org.code.theater.Scene.drawText(java.lang.String,int,int,double) is not applicable (actual and formal argument lists differ in length) /SceneTwo.java:45: error: no suitable method found for drawText(java.lang.String) drawText(bestsong[row][col]); ^ method org.code.theater.Scene.drawText(java.lang.String,int,int) is not applicable (actual and formal argument lists differ in length) method org.code.theater.Scene.drawText(java.lang.String,int,int,double) is not applicable (actual and formal argument lists differ in length)
+
+
+What response I recieved:
+
+Ahhh okay this error makes sense.
+
+Your drawText() method requires coordinates.
+
+From the error message:
+
+drawText(String, int, int)
+drawText(String, int, int, double)
+
+
+That means you must pass:
+
+drawText(text, x, y);
+
+
+OR
+
+drawText(text, x, y, size);
+
+
+Right now you're only doing:
+
+drawText(bestsong[row][col]);
+
+
+That’s why Java is yelling at you.
+----------------------------------------------------------------------
